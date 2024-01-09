@@ -1,0 +1,29 @@
+<div class="flex flex-wrap place-items-center">
+  <section class="relative mx-auto">
+    <!-- navbar -->
+    <nav class="navbar flex justify-between bg-blue-600 text-white w-screen">
+      <div class="px-5 xl:px-12 py-1 flex w-full items-center">
+        <a class="text-3xl font-bold font-heading" href="#">
+<!--          <p class="text-yellow-600">-->
+<!--            AF-->
+<!--          </p>-->
+<!--          <p class="text-green-300 pl-5">-->
+<!--            TAS-->
+<!--          </p>-->
+          <img class="w-30 h-20" src="../../assets/images/blog.png">
+        </a>
+        <!-- Nav Links -->
+        <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12" id="navLinks">
+          <li><a class="hover:text-gray-200" href="#">Home</a></li>
+          <li><a [routerLink]="'/articles'" class="hover:text-gray-200" href="#">Scroll Articles</a></li>
+
+        </ul>
+      </div>
+      <button class="navbar-burger self-center mr-12 xl:hidden" type="button" id="burgerBtn">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hover:text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </nav>
+  </section>
+</div>

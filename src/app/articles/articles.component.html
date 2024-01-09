@@ -1,0 +1,56 @@
+<aside aria-label="Related articles" class="py-8 lg:py-24 bg-gray-50 dark:bg-gray-800">
+<!--  <div class="px-4 mx-auto max-w-screen-xl">-->
+<!--    <h2 class="mb-8 text-2xl font-bold text-gray-900 dark:text-white">Related articles</h2>-->
+<!--    <div *ngFor="let article of articles" class="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">-->
+<!--      <article class="max-w-xs">-->
+<!--        <a href="#">-->
+<!--          <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-1.png" class="mb-5 rounded-lg" alt="Image 1">-->
+<!--        </a>-->
+<!--        <h2 class="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">-->
+<!--          <a href="#">{{article.title}}</a>-->
+<!--        </h2>-->
+<!--        <p class="mb-4 text-gray-500 dark:text-gray-400">{{article.text}}</p>-->
+<!--        <a href="#" class="inline-flex items-center font-medium underline underline-offset-4 text-primary-600 dark:text-primary-500 hover:no-underline">-->
+<!--          Read in 2 minutes-->
+<!--        </a>-->
+<!--      </article>-->
+
+<!--    </div>-->
+  <div class="px-4 mx-auto max-w-screen-xl">
+    <h2 class="mb-8 text-2xl font-bold text-gray-900 dark:text-white">Related articles</h2>
+    <div class="">
+      <div *ngIf="articles$" class="grid gap-12 sm:grid-cols-2 lg:grid-cols-3">
+        <div *ngFor="let article of articles$ | async"  class="max-w-xs">
+          <article  [routerLink]="['/article-details', article.id]">
+
+              <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-1.png" class="mb-5 rounded-lg" alt="Image 1">
+
+            <h2 class="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
+              <a href="#">{{ article.title }}</a>
+            </h2>
+            <p class="mb-4 text-gray-500 dark:text-gray-400">{{ article.text }}</p>
+            <a href="#"  class="inline-flex items-center font-medium underline underline-offset-4 text-primary-600 dark:text-primary-500 hover:no-underline">
+              Read in 2 minutes
+            </a>
+          </article>
+        </div>
+      </div>
+
+      <nav aria-label="Page navigation example" class="flex justify-center ">
+        <ul class="inline-flex -space-x-px text-base h-10">
+          <li *ngFor="let page of pages">
+            <a (click)="loadPage(page)"
+               [class.active-page]="currentPage === page"
+               class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white
+                transition-colors duration-300 ease-in-out
+                focus:outline-none"
+            >{{ page }}</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+
+
+  </div>
+</aside>
