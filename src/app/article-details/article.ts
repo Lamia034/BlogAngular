@@ -1,4 +1,3 @@
-import {Comments} from "../comments/comments";
 import {Users} from "../users/users";
 
 export enum MediaType {
@@ -11,13 +10,13 @@ export interface Medias {
   mediaType: MediaType;
   altText: string;
 }
-export interface Articles{
+export interface Article{
   id:String;
   title:String;
   text:String;
   medias:Medias[];
   nbComments:number;
   nbReacts:number;
-  comments:Comments[];
-  user:Users;
+  comments:Comment[];
+  user: Users;
 }

@@ -13,6 +13,9 @@ import {HttpClientModule} from "@angular/common/http";
 import {articleReducer} from "./store/reducers/article.reducers";
 import {ArticleEffects} from "./store/effects/article.effects";
 import {EffectsModule} from "@ngrx/effects";
+import { UsersComponent } from './users/users.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,9 @@ import {EffectsModule} from "@ngrx/effects";
     CommentsComponent,
     ArticleDetailsComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    UsersComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +35,9 @@ import {EffectsModule} from "@ngrx/effects";
     // StoreModule.forRoot({}, {})
     StoreModule.forRoot({}),
     StoreModule.forFeature('articles', articleReducer),
-    EffectsModule.forRoot([ArticleEffects])
+    EffectsModule.forRoot([ArticleEffects]),
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

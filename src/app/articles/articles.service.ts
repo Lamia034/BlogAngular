@@ -19,9 +19,11 @@ export class ArticleService {
     return this.http.get<Articles[]>(`${this.apiBaseUrl}/articles?page=${page}&size=${size}`);
   }
 
+  public getOneArticle(articleId: string): Observable<Articles> {
+    console.log('fetching article with ID:', articleId);
+    return this.http.get<Articles>(`${this.apiBaseUrl}/articles/${articleId}`);
+  }
 
-
-  //
   // public deleteArticle(articleId: string): Observable<any> {
   //   console.log('Deleting article with ID:', articleId);
   //   return this.http.delete<any>(`${this.apiBaseUrl}/articles/${articleId}`);
